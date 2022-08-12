@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>三元运算符</title>
+</head>
+<body>
+    <h3>三元运算符</h3>
+    <p th:text = "10 &gt; 5 ? 'great' : 'less'">judge</p>
+    <p th:text = "${age} &gt; 20 ? 'great than 20' : 'less than 20'">judge</p>
+    <p th:text = "${age} eq null ? 'is null' : 'is not null'">judge</p>
+    <p th:text = "not(${age} eq null) ? (${age} &gt; 30 ? 'less than 30' : 'great than 30') : 'age is  null'">judge</p>
+    <p th:text="${isLogin} ? '登录' : '未登录'">登录与否</p>
+</body>
+</html>

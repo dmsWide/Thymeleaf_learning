@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>tools class</title>
+    </head>
+    <body th:with="myurl='http://localhost:8080/myweb/hello.jsp?name=zhangsan'">
+        模板名称:<p th:text="${#execInfo.templateName}"></p>
+        模板模式：<p th:text="${#execInfo.templateMode}"></p>
+
+        <div th:with="path=${#uris.escapePath(myurl)}">
+            <p>编码后的值:[[${path}]]</p>
+            <p>解码后的值:[[${#uris.unescapePath(path)}]]</p>
+        </div>
+        <br/>
+        <h3>日期工具类的使用</h3>
+        原始日期:[[${mydate}]]<br/>
+        格式化日期:[[${#dates.format(mydate,"yyyy-MM-dd HH:mm:ss")}]]
+        <br/>
+        <h3>处理数字</h3>
+        原始价格:<p th:text="${price}"></p>
+        格式化价格:<br/>
+        <!--工具的参数都是直接写变量名即可，不需要${变量名} 也就是不需要${price}-->
+        <p th:text="${#numbers.formatInteger(price,0)}"></p>
+        <p th:text="${#numbers.formatInteger(price,1)}"></p>
+        <p th:text="${#numbers.formatInteger(price,2)}"></p>
+        <p th:text="${#numbers.formatInteger(price,3)}"></p>
+        <p th:text="${#numbers.formatInteger(price,4)}"></p>
+        <p th:text="${#numbers.formatInteger(price,5)}"></p>
+        <p th:text="${#numbers.formatCurrency(price)}"></p>
+        <p th:text="${#numbers.formatDecimal(price,2,1)}"></p>
+        <p th:text="${#numbers.formatDecimal(price,2,2)}"></p>
+        <p th:text="${#numbers.formatDecimal(price,2,3)}"></p>
+        <h3>字符串工具类</h3>
+        <!--工具的参数都是直接写变量名即可，不需要${变量名} 也就是不需要${myname}-->
+        原始字符串：<p th:text="${myname}"></p>
+        <!--为真显示里面的内容-->
+        <p th:if="!${#strings.isEmpty(myname)}">myname不是null</p>
+        <p th:text="${#strings.indexOf(myname,'om')}"></p>
+        <p th:text="${#strings.substring(myname,0)}"></p>
+        <!--[0,2)-->
+        <p th:text="${#strings.substring(myname,0,2)}"></p>
+        <p th:text="${#strings.toUpperCase(myname)}"></p>
+    </body>
+</html>

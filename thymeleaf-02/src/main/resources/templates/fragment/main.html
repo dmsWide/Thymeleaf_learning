@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>模板使用</title>
+    </head>
+    <body>
+        <h3>使用模板</h3>
+        <p th:insert="fragment/footer::header">
+            插入header模板
+        </p>
+        <p th:insert="~{fragment/footer::header}">
+            插入header模板
+        </p>
+        <h3>参数模板的使用</h3>
+        <div th:insert="~{fragment/footer::fun(a='zhangsan',b='lisi')}"></div>
+        <h3>插入页脚</h3>
+        <div th:insert="fragment/footer::copy"></div>
+        <div th:insert="~{fragment/footer::copy}"></div>
+        <br/>
+        <h3>当前页面中定义模板顶引用模板</h3>
+        <div th:fragment="inner">
+            在本页当中引入当前页所定义的模板
+        </div>
+        <p th:fragment="inner1">
+            本页模板使用p标签定义
+        </p>
+        <div th:insert="~{::inner}"></div>
+        <div th:insert="::inner1"></div>
+        <br/>
+        <h3>使用id定义模板</h3>
+        <p id="id1">使用id来定义模板</p>
+        <div th:insert="::#id1"></div>
+        <br/>
+        <h3>使用replace来替换标签</h3>
+        <!-- <div>
+            在本页当中引入当前页所定义的模板
+        </div>-->
+        <!--这里的p标签被完全替换为div标签-->
+        <p th:replace="::inner"></p>
+        <h3>使用include</h3>
+        <!--将模板中的内容拿出来标签不移动-->
+        <!--<div>
+            在本页当中引入当前页所定义的模板
+        </div>-->
+        <div th:include="::inner"></div>
+
+        <h3>动态提供模板的名称,使用model提供数据的方式提供模板名称</h3>
+        <div th:insert="fragment/footer::${menuTemplate}"></div>
+    </body>
+</html>

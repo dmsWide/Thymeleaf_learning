@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>使用产出模板</title>
+    </head>
+    <body>
+        <h3>使用删除操作</h3>
+        <h3>删除all</h3>
+        <div th:remove="all">
+            在div标签内部准备被删除
+            <span>这是一个span</span>
+        </div>
+        <h3>删除body</h3>
+        <div th:remove="body">
+            在div标签内部准备被删除
+            <span>这是一个span</span>
+        </div>
+        <h3>删除tag</h3>
+        <div th:remove="tag">
+            在div标签内部准备被删除
+            <span>这是一个span</span>
+        </div>
+        <h3>删除all-but-first</h3>
+        <div th:remove="all-but-first">
+            在div标签内部准备被删除
+            <span>这是一个span</span>
+            <span>这也是一个span</span>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+    <head th:lang-xmllang="en">
+        <meta charset="UTF-8">
+        <title>attr</title>
+        <style type="text/css">
+            .large-font{
+                color: aqua;
+                font-size: 20px;
+            }
+        </style>
+        <script type="text/javascript">
+            function fun() {
+                alert("yeah!");
+            }
+        </script>
+    </head>
+    <body>
+        <h3>th:attr的使用</h3>
+        <form action = "hello.html" method="post" th:attr = "action = ${action1}">
+            账号:<input type="text" name = "username"><br/>
+            密码:<input type="text" name = "password"><br/>
+           <!-- <input type="submit" value="login" th:attr="value = ${text1}">-->
+            <input type = "button" value = "login"  th:value="${text1}" th:attr = "onclick = 'fun()'">
+        </form>
+        <br/>
+        <form th:action="@{/uese/listener}" method="get">
+            姓名：<input type = "text" value ="" name = "username"><br/>
+            密码：<input type="text" value ="" name = "password"><br/>
+            <input type="submit" th:value ="${text1}">
+        </form>
+
+        <a th:href="@{index.html}" th:class="large-font">链接</a><br/>
+        <!-- <img src = img/cat.jpg alt="my_catlet" title="my_catlet"/><br/> -->
+        <img th:src = @{img/cat.jpg} th:alt-title="my_catlet"/><br/>
+
+
+    </body>
+</html>

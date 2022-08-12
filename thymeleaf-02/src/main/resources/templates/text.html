@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th ="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>text</title>
+</head>
+<body>
+    <h3>文本的处理</h3>
+    <p th:text="text-expression">text dispose</p>
+    <p th:text="'hello thymelead'">has space</p>
+    <p th:text="'hourse' + ' ' +'rabbit'">use + </p>
+    <p th:text="'learn'+ ' ' + ${lang}">learn to program</p>
+    <p th:text="|learn ${lang}|">learn to program from the second way</p>
+    <!--||连接符 比 +号好用很多-->
+    <p th:text="hello + | ${name1} ${name2}|">hello</p>
+    <p th:text="hello + ' ' + ${name1} + ' ' + ${name2}">hello</p>
+    <p th:text="123">digits</p>
+    <p th:text="true">boolean</p>
+</body>
+</html>

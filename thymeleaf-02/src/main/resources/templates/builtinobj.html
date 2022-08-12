@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>内置类的使用</title>
+    </head>
+    <body>
+        <h3>#request类的使用</h3>
+        contextPath:<p th:text="${#request.getContextPath()}"></p>
+        param:<p th:text="${#request.getParameter('name')}"></p>
+        attribute:<p th:text="${#request.getAttribute('attr1')}"> </p>
+        <h3>#session</h3>
+        <p th:text="${#session.getId()}"></p>
+        <p th:text="${#session.getAttribute('sessionAttr')}"></p>
+        <p th:text="${#session.getCreationTime()}"></p>
+        <p>#servletContext</p>
+        <p th:text="${#servletContext.getAttribute('contextAttr')}"></p>
+        <p th:text="${#servletContext.getServerInfo()}"></p>
+        <h3>快捷对象的使用</h3>
+        <p><b>param快捷对象的使用</b></p>
+        <p th:text="${param.userid}"></p>
+        <p th:text="${param.containsKey('name')}"></p>
+        <p th:text="${param.name}">
+        <p th:text="${param.foo[0]}"></p>
+        <p th:text="${param.foo[1]}"></p>
+        <p th:text="${param.size()}"></p>
+        <p><b>session快捷对象的使用</b></p>
+        获取session中指定的key值:<p th:text="${session.sessionAttr}"></p>
+        获取session中key的数量:<p th:text="${session.size()}"></p>
+        <p><b>application快捷对象的使用</b></p>
+        获取全局作用数据ServletContext中的数据:<p th:text="${application.contextAttr}"></p>
+        获取全局作用数据ServletContext中的数据:<p th:text="${application.get('contextAttr')}"></p>
+        获取全局作用数据ServletContext中key的数量:<p th:text="${application.size()}"></p>
+    </body>
+</html>

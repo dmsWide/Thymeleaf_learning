@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>布尔表达式</title>
+</head>
+<body>
+    <h3>if表达式</h3>
+    <!--为true时才显示内容-->
+    <p th:if="true">判断boolean表达式true</p>
+    <p th:if="5 > 0">判断5 > 0</p>
+    <p th:if="'true'">判断字符串'true'</p>
+    <p th:if="'ok'">判断'ok'</p>
+    <p th:if ="9">数字9</p>
+
+    <p th:if="${old}">模型中的true</p>
+    <p th:if="${login}">模型中的string</p>
+    <p th:if="${num1}">数字10</p>
+    <p th:if="${num2}">数字-1</p>
+    <p th:if="${str}">空字符串</p>
+    <p th:if="${obj}">空的student对象</p>
+</body>
+</html>

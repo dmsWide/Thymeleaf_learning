@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>expression</title>
+</head>
+<body>
+    <h3>获取简单类型的数据</h3>
+    <p th:text="${myname}"></p>
+    <p th:text="${myage}"></p>
+    <!-- 是public属性或者private属性但是有get方法的时候可以获得属性值-->
+    <h3>获取引用类型的数据</h3>
+    <p th:text="${student.id}">id</p>
+    <p th:text="${student.name}">name</p>
+    <p th:text="${student.email}">email</p>
+    <p th:text="${student.age}">age</p>
+    <p th:text="${student.gender}">gender</p>
+    <div>
+        学校信息：
+        <p th:text="${student.school.schoolName}">
+        <p th:text="${student.school.schoolAddress}">
+        <p th:text="${student.school.getSchoolAddress}">
+
+    </div>
+</body>
+</html>

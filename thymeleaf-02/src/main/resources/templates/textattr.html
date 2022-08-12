@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>text attr</title>
+    </head>
+    <body>
+        <h3>学习th:text和th:utext的区别</h3>
+        <!--<p>学习&lt;strong&gt;java语言&lt;/strong&gt;做开发</p>进行了转义-->
+        <p th:text="${lang}">学习</p>
+        <!--<p>学习<strong>java语言</strong>做开发</p>-->
+        <p th:utext="${lang}">学习</p>
+        <p th:utext="${content}">开发</p>
+    </body>
+</html>

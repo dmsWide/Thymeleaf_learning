@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>链接表达式</title>
+    <script src="@{/js/jquery.3.4.1.js}" type="text/javascript"> </script>
+</head>
+<body>
+    <p>链接表达式</p>
+    <!--http://localhost:8080/link/queryStudent-->
+    <!--这里使用的是连接表达式 不是变量表达式所以queryStudent中存储的数据无法取出来这里的变量直接视为链接地址的一部分-->
+    <a th:href = "@{queryStudent(id = 1,name = ${myname})}">1、@{queryStudent}</a>
+    <br>
+    <!--http://localhost:8080/query/student-->
+    <a th:href = "@{${queryStudent}(id = 2,email = 'zhangsan@163.com')}">1、@{${queryStudent}}</a>
+    <br>
+    <!--http://localhost:8080/link/queryStudent-->
+    <a th:href = "@{./queryStudent}">2、@{./queryStudent}</a>
+    <br>
+    <!--http://localhost:8080/user/list-->
+    <a th:href = "@{../user/list(id=3,age=20,name=${myname})}">3、@{../user/list}</a>
+    <br>
+    <!--http://localhost:8080/user/home-->
+    <a th:href = "@{/user/home}">4、@{/user/home}</a>
+    <br>
+    <!--https://www.baidu.com/-->
+    <a th:href = "@{https://www.baidu.com}">4、百度首页</a>
+    <br>
+</body>
+</html>

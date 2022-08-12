@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑和比较运算符</title>
+</head>
+<body>
+    <h3>逻辑和比较运算</h3>
+    <p th:if = "10 > 5">10大于5</p>
+    <p th:if = "10 &gt; 5">10大于5</p>
+    <p th:if = "10 &gt; 5 and 5 != 6">10大于5并且5不等于6</p>
+    <p th:if = "!(false)">!(false)</p>
+    <p th:if = "not(false)">not(false)</p>
+    <p th:if = "${isLogin}">已经登录</p>
+    <p th:if = "not(${isLogin})">没有登录</p>
+    <p th:if = "${num2} > ${num1}">200 > 100</p>
+</body>
+</html>

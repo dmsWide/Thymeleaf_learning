@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>循环添加对象</title>
+    </head>
+    <body>
+        <h3>th:each进行遍历List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td>id</td>
+                    <td>name</td>
+                    <td>age</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each = "stu:${students}">
+                    <td th:text="${stu.id}"></td>
+                    <td th:text="${stu.name}"></td>
+                    <td th:text="${stu.age}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/><br/>
+        <h3>th:each进行遍历Map</h3>
+        <p th:each = "m:${map}">
+            <td th:text="${m.key}"></td>
+            <td th:text="${m.value}"></td>
+        </p>
+
+        <br/><br/>
+        <h3>th:each进行遍历List和Map</h3>
+        <div>
+            <ul th:each="ml:${mapList}">
+                <li th:each="entry:${ml}" th:text="${entry.key}"></li>
+                <li th:each="entry:${ml}" th:text="${entry.value}"></li>
+            </ul>
+        </div>
+
+        <br/><br/>
+        <h3>th:each进行遍历数组</h3>
+        <ul>
+            <li th:each="name:${names}" th:text="${name}"></li>
+        </ul>
+
+        <h3>th:each进行遍历下列表</h3>
+        <div>
+            <select>
+                <option th:each="city:${cities}"
+                        th:value="${city.key}"
+                        th:text="${city.value}"
+                        th:selected="${selected} eq ${city.value}"></option>
+            </select>
+        </div>
+        <br/>
+        <h3>获取循环中的详细信息</h3>
+        <table border="1" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <td>index</td>
+                    <td>first/last</td>
+                    <td>odd/even</td>
+                    <td>info</td>
+                    <td>id</td>
+                    <td>name</td>
+                    <td>age</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each = "student,statusTemp:${students}">
+                    <td th:text="${statusTemp.index}"></td>
+                    <td th:text="${statusTemp.first}?'first':(${statusTemp.last}?'last':'nither')"></td>
+                    <td th:text="${statusTemp.odd}?'odd':(${statusTemp.even}?'even':'nither')"></td>
+                    <td th:text="${statusTemp.count} + '/' + ${statusTemp.size}"></td>
+                    <td th:text="${student.id}"></td>
+                    <td th:text="${student.name}"></td>
+                    <td th:text="${student.age}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

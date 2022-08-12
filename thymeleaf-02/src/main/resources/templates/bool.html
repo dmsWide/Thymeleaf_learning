@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>布尔表达式</title>
+</head>
+<body>
+    <h3>布尔表达式</h3>
+    <p th:text="true">布尔值是true</p>
+    <p th:if="${married}">已经结婚了</p>
+    <p th:text="true">布尔值是true</p>
+    <p th:if = "${age} &gt; 18">已经成年</p>
+    <p th:if = "${age} > 18">已经成年,好耶</p>
+    <p th:if = "${age} &lt; 18">还没有成年</p>
+    <p th:if = "${married} and ${age} &gt; 18">成年并且结婚了</p>
+</body>
+</html>

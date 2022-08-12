@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>unless</title>
+    </head>
+    <body>
+        <p th:unless="${young}">young is false</p>
+        <p th:unless="${login}">login is offline</p>
+        <p th:unless="${str1}">str1 is no</p>
+        <p th:unless="${str2}">str2 is <strong>'false'</strong></p>
+        <p th:unless="${num1}">num1 is zero</p>
+        <p th:unless="${obj}">obj is null</p>
+    </body>
+</html>

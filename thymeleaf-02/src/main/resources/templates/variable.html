@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>variable</title>
+    </head>
+    <body>
+        <h3>th:with声明变量</h3>
+        <div th:with="name='zhangsan'">
+            <p th:text="${name}"></p>
+        </div>
+        <br/>
+        <div th:with="id=1001,name='lisi',innerAge=${age}">
+            <div th:text="${id}"></div>
+            <div th:text="${name}"></div>
+            <div th:text="${age}"></div>
+            <div th:text="${innerAge}"></div>
+        </div>
+    </body>
+</html>

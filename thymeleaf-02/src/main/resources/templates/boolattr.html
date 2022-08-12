@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>bool attr</title>
+    </head>
+    <body>
+        <h3>bool 属性的属性</h3>
+        <!--<input type = "checkbox" value = "swimming" checked="checked">swimming<br/>
+        <input type = "checkbox" value = "boxing">boxing<br/>-->
+
+        <input type = "checkbox" value = "swimming" th:checked="${selected}">swimming<br/>
+        <input type = "checkbox" value = "boxing" th:checked="${unselected}">boxing<br/>
+    </body>
+</html>

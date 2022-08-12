@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8">
+        <title>inline</title>
+        <script type="text/javascript" th:inline="javascript">
+            alert([[${hero}]]);
+            let list = [[${list1}]];
+            for(let i = 0;i < list.length;i++){
+                console.log(list[i].id + " " + list[i].name + " " + list[i].age);
+            }
+        </script>
+    </head>
+    <body>
+        <h3>使用常用方式获取数据</h3>
+        <p th:text="${slogon}"></p>
+        <p th:utext="${slogon}"></p>
+        <h3>使用内联方式获取数据</h3>
+        <p>数据为:[[${slogon}]]</p>
+        <p>数据为:[(${slogon})]</p>
+
+        <h3>禁用内联方式</h3>
+        <p th:inline="none">[[原样输出的数据1]]</p>
+        <p th:inline="none">[(<b>原样输出的数据2</b>)]</p>
+    </body>
+</html>
